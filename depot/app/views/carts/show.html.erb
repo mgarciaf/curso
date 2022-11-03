@@ -7,7 +7,10 @@
 <ul>
   <% @cart.line_items.each do |item| %>
   <li>
-    <%= item.product.title %>
+    <%= item.product.title %> x <%= item.quantity %> = <%= item.total_price %>
   </li>
   <% end %>
 </ul>
+<p>Total: <%= @cart.total_price %></p>
+
+<%= button_to 'Vaciar', @cart, method: :delete, data: { confirm: '¿Estás seguro?'} %>
