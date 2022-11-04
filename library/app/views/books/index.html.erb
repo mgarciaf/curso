@@ -1,0 +1,38 @@
+<p id="notice"><%= notice %></p>
+
+<div class="container">
+  <div class="page-header">
+    <h1>Book</h1>
+  </div>
+</div><div class="container">
+  <table class="table table-striped">
+    <thead>
+      <tr>
+        <th>Title</th>
+        <th>Category</th>
+        <th>Year</th>
+        <th class="text-center">Actions</th>
+      </tr>
+    </thead>
+    <tbody>
+      <% @books.each do |book| %>
+        <tr>
+          <td><%= book.title %></td>
+          <td><%= book.category %></td>
+          <td><%= book.year %></td>
+          <td class="text-center">
+            <%= link_to "Show", book, class: 'label label-info'%>
+            <%= link_to "Edit", edit_book_path(book), class: 'label label-success'%>
+            <%= link_to 'Destroy', book, method: :delete, data: { confirm: 'Are you sure?' }, class: 'label label-danger' %>
+          </td>
+        </tr>
+      <% end %>
+    </tbody>
+  </table>
+</div>
+
+<br>
+
+<div class="btn btn-outline-primary">
+  <%= link_to 'New Book', new_book_path, :class => "btn-xs" %>
+</div>

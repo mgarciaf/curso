@@ -1,0 +1,12 @@
+<div class="card">
+  <div class="card-header">
+    Editing Book
+  </div>
+  <div class="card-body">
+    <%= render 'form', book: @book %>
+  </div>
+  <div class="card-footer">
+    <%= link_to 'Show', @book, class: 'label label-primary' %> |
+    <%= link_to 'Back', books_path, class: 'label label-primary' %>
+  </div>
+</div>
